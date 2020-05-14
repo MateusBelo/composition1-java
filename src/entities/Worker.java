@@ -13,7 +13,8 @@ public class Worker {
 	private Double baseSalary;
 	
 	private Department department;
-	private List<HourContract> contracts = new ArrayList<>();
+	private List<HourContract> contracts = new ArrayList<>(); //Não faz parte do construtor porque é lista
+	//Mas a lista já foi estanciada. new ArrayList
 	
 	public Worker() {
 	}
@@ -60,13 +61,16 @@ public class Worker {
 	public List<HourContract> getContracts() {
 		return contracts;
 	}
+	
+	//Metodo set foi removido por que se não outra lista seria introduzida. O papel do set será pelo metodo 
+	//Addcontrat que irá adicionar somente um novo contrato à llista.
 
 	public void addContract(HourContract contract) {
-		contracts.add(contract);
+		this.contracts.add(contract);
 	}
 	
 	public void removeContract(HourContract contract) {
-		contracts.remove(contract);
+		this.contracts.remove(contract);
 	}
 	
 	public double income(int year, int month) {
